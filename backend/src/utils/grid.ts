@@ -1,5 +1,5 @@
 import shuffle from 'lodash.shuffle';
-import { ALPHABET, BIAS_WEIGHT, GRID_COLS } from '../utils/constants';
+import { ALPHABET, BIAS_WEIGHT, GRID_COLS } from './constants';
 import {
     GenerateRandomGridType,
     GenerateRandomGridWithBiasType,
