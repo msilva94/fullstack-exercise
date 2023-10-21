@@ -1,10 +1,12 @@
 import React from 'react';
+import AppWrapper from './App.styles'
+import GridPage from './pages/Grid/GridPage';
 
 const App: React.FC = () => {
     return (
-        <div className="App">
-
-        </div>
+        <AppWrapper>
+            <GridPage />
+        </AppWrapper>
     );
 }
 
