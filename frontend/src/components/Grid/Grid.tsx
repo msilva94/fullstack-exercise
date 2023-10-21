@@ -1,12 +1,12 @@
 import React from 'react';
+
 import { GridWrapper, Cell } from './Grid.styles';
+import { GridProps } from './Grid.types';
 
-const GRID = Array.from({ length: 100 }, () => 'a');
-
-const Grid: React.FC = () => {
+const Grid: React.FC<GridProps> = ({ grid }) => {
     return (
         <GridWrapper>
-            {GRID.map((char, index) => (
+            {grid.map((char, index) => (
                 <Cell key={index}>{char}</Cell>
             ))}
         </GridWrapper>

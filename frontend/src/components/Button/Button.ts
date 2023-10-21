@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { MAIN_COLOR } from '../../utils/constants';
 
 const Button = styled.button`
@@ -13,6 +14,10 @@ const Button = styled.button`
 
     &:hover {
         opacity: 0.7;
+    }
+
+    &:disabled {
+        opacity: 0.5;
     }
 `;
 

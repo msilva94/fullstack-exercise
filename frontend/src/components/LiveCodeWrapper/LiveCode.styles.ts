@@ -23,7 +23,16 @@ export const LiveSpan = styled.span`
         height: 0.65rem;
         border-radius: 50%;
         background-color: red;
+        animation-name: slidein;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
     }
+
+    @keyframes slidein {
+        0%   {opacity: 1}
+        50%  {opacity: 0}
+        100% {opacity: 1}
+      }      
 `;
 
 export const CodeWrapper = styled.div`

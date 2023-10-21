@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { MAIN_COLOR } from '../../utils/constants';
 
 export const Label = styled.label`
@@ -10,10 +11,10 @@ export const Label = styled.label`
     font-weight: bold;
 `;
 
-export const InputWrapper = styled.input`
+export const Input = styled.input`
     width: 4rem;
     padding: 1rem;
     margin-top: 0.5rem;
-    border: 0.1rem solid black;
+    border: 0.1rem solid ${MAIN_COLOR};
     border-radius: 0.2rem;
 `;

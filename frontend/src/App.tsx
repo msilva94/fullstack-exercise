@@ -1,6 +1,8 @@
 import React from 'react';
-import AppWrapper from './App.styles'
+
 import GridPage from './pages/Grid/GridPage';
+
+import AppWrapper from './App.styles'
 
 const App: React.FC = () => {
     return (
