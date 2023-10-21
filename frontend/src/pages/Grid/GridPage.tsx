@@ -35,10 +35,8 @@ const GridPage: React.FC = () => {
 
     useEffect(() => {
         if (canChangeBiasChar) {
-            console.log('OFF COOLDOWN');
             clearTimeout(biasTimeout?.current);
         } else {
-            console.log('ON COOLDOWN');
             biasTimeout.current = window.setTimeout(() => setCanChangeBiasChar(true), BIAS_COOLDOWN_INTERVAL);
         }
     }, [canChangeBiasChar]);
