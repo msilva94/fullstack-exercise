@@ -55,5 +55,5 @@ export const getCharAtXY: GetCharAtXYType = (grid, x, y) => {
 
 export const convertBigNumber: ConvertBigNumberType = (number) => {
     // divide the number by the lowest integer possible in order to get a value <= 9
-    return Math.floor(number / (Math.floor(number / 10) + 1));
+    return Math.floor(number / Math.ceil(number / 9));
 };
