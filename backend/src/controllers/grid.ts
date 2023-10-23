@@ -1,21 +1,20 @@
 import { Request, Response } from 'express';
+import { matchedData, validationResult } from 'express-validator';
+
 import { generateRandomGrid, generateRandomGridWithBias, generateCode } from '../utils/grid';
-import { ALPHABET, GRID_SIZE } from '../utils/constants';
+import { GRID_SIZE } from '../utils/constants';
+
 import { GridType } from '../types/grid';
 
 export const getGrid = (req: Request, res: Response) => {
-    const { bias } = req.query;
-    let grid: GridType = [];
+    const result = validationResult(req);
 
-    if (bias) {
-        if (typeof bias === 'string' && bias.length === 1 && ALPHABET.includes(bias)) {
-            grid = generateRandomGridWithBias(GRID_SIZE, bias);
-        } else {
-            return res.status(400).json({ error: 'The bias parameter must be a single alphabetic character.' });
-        }
-    } else {
-        grid = generateRandomGrid(GRID_SIZE);
+    if (!result.isEmpty()) {
+        return res.status(400).send({ errors: result.array() });
     }
 
-    return res.json({ grid, code: generateCode(grid) });
+    const { bias } = matchedData(req);
+    const grid: GridType = bias ? generateRandomGridWithBias(GRID_SIZE, bias) : generateRandomGrid(GRID_SIZE);
+
+    res.json({ grid, code: generateCode(grid) });
 };
