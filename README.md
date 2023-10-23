@@ -8,8 +8,14 @@
 The application will be served here: http://localhost:3000/.
 
 ## Build
-```
-docker compose up --build -d
-```
+
+### Using local npm
+1. Build the frontend: `cd frontend && npm run build && cd ..`
+2. Build the backend: `cd backend && npm run build`
+3. Copy the frontend build to the backend build directory: `cp -r ../frontend/build dist/public`
+4. Run the server: `node dist/index.js`
+
+### Using Docker
+`docker compose up --build -d`
 
 The application will be served here: http://localhost:8000/.
