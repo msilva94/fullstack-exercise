@@ -11,7 +11,7 @@ export const Label = styled.label`
     font-weight: bold;
 `;
 
-export const Input = styled.input`
+export const MyInput = styled.input`
     width: 4rem;
     padding: 1rem;
     margin-top: 0.5rem;

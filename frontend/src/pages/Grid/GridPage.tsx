@@ -4,7 +4,7 @@ import Button from '../../components/Button/Button';
 import Grid from '../../components/Grid/Grid';
 import Icon from '../../components/Icon/Icon';
 import LiveCode from '../../components/LiveCodeWrapper/LiveCode';
-import TextInput from '../../components/Input/TextInput';
+import Input from '../../components/Input/Input';
 
 import { Wrapper, Header } from './GridPage.styles';
 import { GridInfo } from './GridPage.types';
@@ -63,8 +63,9 @@ const GridPage: React.FC = () => {
     return (
         <Wrapper>
             <Header>
-                <TextInput
-                    label="Character"
+                <Input
+                    type="text"
+                    placeholder="Character"
                     value={biasChar}
                     onChange={handleBiasCharChange}
                     disabled={!canChangeBiasChar}
